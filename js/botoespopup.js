@@ -13,40 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* Última modificação em: 08/04/2015 18:48 */
-@font-face {
-    font-family: "Roboto";
-    src: url("fonts/Roboto-Regular.ttf");
-}
+// Última modificação em: 07/04/2015 22:32
+window.onload = function () {
+	var botoes = JSON.parse(localStorage["botoes"]);
+	for (var i = 0; i < botoes.length; i++) {
+		document.getElementById(botoes[i]).checked = true;
+	}
 
-body {
-	font-family: "Roboto";
-	background-color: #eeeeee;
-	-webkit-user-select: none;
-	font-size: 19px;
-	width: 305px;
-	color: #000000;
-}
-
-#header {
-	text-align: center;
-}
-
-#nome {
-	cursor: default;
-}
-
-#back, #open {
-	cursor: pointer;
-}
-
-iframe {
-	height: 400px;
-	border: none;
-}
-
-hr {
-	border: 0px;
-	height: 1px;
-	background: #e0e0e0;
+	$('input').change(function () {
+			if (this.checked == true) {
+				var what = botoes.push(this.id);
+				localStorage["botoes"] = JSON.stringify(botoes);
+			} else {
+				var index = botoes.indexOf(this.id);
+				botoes.splice(index, 1);
+				localStorage["botoes"] = JSON.stringify(botoes);
+			}
+			botoes = JSON.parse(localStorage["botoes"]);
+	});
 }

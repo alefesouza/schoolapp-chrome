@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<!-- Última modificação em: 15/03/2015 16:45 -->
+<!-- Última modificação em: 08/04/2015 01:46 -->
 <html>
 <head>
 <title>RebuApp</title>
@@ -38,7 +38,7 @@ body {
 	color: #000000;
 }
 
-#dialog-message, .ui-dialog-title, .ui-button-text {
+#dialog-biblioteca, #dialog-dicionario, .ui-dialog-title, .ui-button-text {
 	font-size: 62.5%;
 }
 
@@ -47,6 +47,7 @@ body {
 	line-height:40px;
 	padding: 2px 4px;
 	vertical-align:middle;
+	display: none;
 }
 
 .menuitem:hover {
@@ -103,9 +104,6 @@ body {
 		<img src="imagens/ic_comunicados.png"> Comunicados
 		<div class="number" id="numbercomunicados"></div>
 	</div>
-	<div id="anotacoes" class="menuitem">
-		<img src="imagens/ic_anotacoes.png"> Anota&ccedil;&otilde;es
-	</div>
 	<div id="notificacoes" class="menuitem">
 		<img src="imagens/ic_notificacoes.png"> Notifica&ccedil;&otilde;es
 		<div class="number" id="numbernotificacoes"></div>
@@ -113,14 +111,36 @@ body {
 	<div id="biblioteca" class="menuitem">
 		<img src="imagens/ic_biblioteca.png"> Biblioteca
 	</div>
+	<div id="cantina" class="menuitem">
+		<img src="imagens/ic_cantina.png"> Cantina
+	</div>
+	<div id="anotacoes" class="menuitem">
+		<img src="imagens/ic_anotacoes.png"> Anota&ccedil;&otilde;es
+	</div>
+	<div id="dicionario" class="menuitem">
+		<img src="imagens/ic_dicionario.png"> Dicion&aacute;rio
+	</div>
+	<div id="blog" class="menuitem">
+		<img src="imagens/ic_blog.png"> Blog
+	</div>
+	<div id="jornal" class="menuitem">
+		<img src="imagens/ic_blog.png"> Jornal
+	</div>
 	<div id="painel" class="menuitem" style="display: none;">
 		<img src="imagens/ic_painel.png"> Painel
 	</div>
 	
-	<div id="dialog-message" title="RebuApp" style="display: none;">
+	<div id="dialog-biblioteca" title="RebuApp" style="display: none;">
 		<p>
 		<span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 50px 0;"></span>
-			Dica: Voc&ecirc; pode fazer uma busca na biblioteca digitando "rp" e o nome do livro, autor ou editora na barra de endere&ccedil;os.
+			Dica: Voc&ecirc; pode fazer uma busca na biblioteca digitando "rp" na barra de endere&ccedil;os, apertando TAB e o nome do livro, autor ou editora.
+		</p>
+	</div>
+	<div id="dialog-dicionario" title="RebuApp" style="display: none;">
+		<p>
+		<span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 50px 0;"></span>
+			Dica: Voc&ecirc; pode pesquisar uma palavra no dicion&aacute;rio digitando "rp" na barra de endere&ccedil;os, apertando TAB, depois digitando "dic " e a palavra que voc&ecirc; quer saber o significado.
+		</p>
 	</div>
 </body>
 </html>

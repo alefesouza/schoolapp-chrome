@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Última modificação em: 09/03/2015 20:27
+// Última modificação em: 08/04/2015 19:34
 function selects(que) {
 	var sala = localStorage[que];
 	if (!sala) {
@@ -68,19 +68,34 @@ $(function () {
 	$('#eletiva').change(function () {
 		localStorage["eletiva"] = document.getElementById("eletiva").value;
 	});
+	$('#categorias').click(function () {
+	$("#dialog-message").dialog({
+				modal : true,
+				buttons : {
+					Ok : function () {
+						$('#dialog-message').dialog('close');
+					}
+				}
+			});
+	});
 	$('#painel').change(function () {
 		localStorage["painel"] = document.getElementById("painel").checked;
 	});
 	$('#isrespon').change(function () {
 		localStorage["isrespon"] = document.getElementById("isrespon").checked;
 	});
+	$('#cantinanotif').change(function () {
+		localStorage["cantinanotif"] = document.getElementById("cantinanotif").checked;
+	});
 	$('input[name=numbericon]').change(function () {
 		localStorage["numbericon"] = $('input[name=numbericon]:checked').val();
+		chrome.extension.getBackgroundPage().updateBadge();
 	});
 	document.getElementById("notifnotificacoes").checked = JSON.parse(localStorage["notifnotificacoes"]);
 	document.getElementById("notiflastnotificacoes").checked = JSON.parse(localStorage["notiflastnotificacoes"]);
 	document.getElementById("painel").checked = JSON.parse(localStorage["painel"]);
 	document.getElementById("isrespon").checked = JSON.parse(localStorage["isrespon"]);
+	document.getElementById("cantinanotif").checked = JSON.parse(localStorage["cantinanotif"]);
 	document.getElementById(localStorage["numbericon"]).checked = true;
 	selects("sala");
 	selects("clube");
@@ -97,6 +112,7 @@ $(function () {
 			localStorage["eletiva"] = json.eletiva;
 			localStorage["painel"] = json.painel;
 			localStorage["isrespon"] = json.isrespon;
+			localStorage["cantinanotif"] = json.cantinanotif;
 			localStorage["cor"] = json.cor;
 			location.reload();
 		})
@@ -107,5 +123,5 @@ $(function () {
 });
 
 $(window).unload(function () {
-	chrome.extension.getBackgroundPage().updateBagde();
+	chrome.extension.getBackgroundPage().updateBadge();
 });

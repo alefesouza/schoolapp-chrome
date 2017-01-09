@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Última modificação em: 13/03/2015 16:17
+// Última modificação em: 08/04/2015 19:11
 $(function () {
 var url = null;
 if(_GET("oque") == "notificacoes") {
@@ -46,7 +46,7 @@ function contructJson(json) {
 	if(_GET("oque") == "notificacoes") { clickable = ""; }
 	if(json.grupoid != "") { clickablen = " clickable"; }
 	
-	if(_GET("oque") != "notificacoes" && _GET("oque") != "comunicados") {
+	if(_GET("oque") != "notificacoes" && _GET("oque") != "comunicados" && _GET("oque") != "cantinacardapio" && _GET("oque") != "cantinapromocoes") {
 	$("#eventos").append("<section class=\"margin card" + clickablen + "\" id=\"nome\" style=\"width: auto; height: auto; text-align: center;\"><b>" + json.nome + "</b></section>"); }
 	
 	if(json.grupoid != "") { $('#nome').click(function () { window.open('http://www.facebook.com/groups/' + json.grupoid); }); }

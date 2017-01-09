@@ -1,7 +1,7 @@
 {
 	"name": "RebuApp",
 	"description": "Extens\u00e3o do RebuApp para Google Chrome, receba notifica\u00e7\u00f5es em tempo real e tenha mais facilidade para acessar o aplicativo.",
-	"version": "1.0.3.1",
+	"version": "1.1.2",
 	"manifest_version": 2,
 	"permissions": [ "http://apps.aloogle.net/web/rebuapp", "storage", "notifications" ],
 	"options_page": "paginas/opcoes.html",
