@@ -13,15 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Última modificação em: 09/03/2015 20:20
+// Última modificação em: 14/03/2015 23:06
 chrome.omnibox.onInputChanged.addListener(
 	function (text, suggest) {
-	suggest([{
-				content : " " + text,
-				description : "Digite sua busca na biblioteca do RebuApp"
-			},
-		]);
+	$.ajax('http://apps.aloogle.net/web/rebuapp/json/gc/sugestoes.php?q=' + text)
+	.done(function (json) {
+		json = JSON.parse(json);
+		suggest(json);
+	});
 });
+
+chrome.omnibox.setDefaultSuggestion({ description: "Pesquisar livro na biblioteca" });
 
 chrome.omnibox.onInputEntered.addListener(
 	function (text) {
@@ -42,7 +44,7 @@ if (!localStorage.storagepadrao) {
 		localStorage["painel"] = json.painel;
 		localStorage["isrespon"] = json.isrespon;
 		localStorage["cor"] = json.cor;
-		updateBagde();
+		updateBadge();
 	})
 	.fail(function () {
 		localStorage["sala"] = "";
@@ -103,7 +105,7 @@ function notifLatest() {
 					}
 				}
 			});
-			updateBagde();
+			updateBadge();
 
 			if (localStorage['examplenotif'] == "true") {
 				$.ajax('http://apps.aloogle.net/web/rebuapp/json/gc/notif.php?sala=' + localStorage["sala"] + '&clube=' + localStorage["clube"] + '&eletiva=' + localStorage["eletiva"] + '&isrespon=' + localStorage["isrespon"])
@@ -156,7 +158,7 @@ function notification() {
 				}
 			});
 			localStorage["lastNumber"] = x;
-			updateBagde();
+			updateBadge();
 
 			if (localStorage['examplenotif'] == "true") {
 				$.ajax('http://apps.aloogle.net/web/rebuapp/json/gc/notif.php?sala=' + localStorage["sala"] + '&clube=' + localStorage["clube"] + '&eletiva=' + localStorage["eletiva"] + '&isrespon=' + localStorage["isrespon"] + '&all=true')
@@ -179,7 +181,7 @@ setInterval(function () {
 	}
 }, 60000 * 30);
 
-function updateBagde() {
+function updateBadge() {
 	$.ajax('http://apps.aloogle.net/web/rebuapp/json/gc/total.php?sala=' + localStorage["sala"] + '&clube=' + localStorage["clube"] + '&eletiva=' + localStorage["eletiva"] + '&isrespon=' + localStorage["isrespon"])
 	.done(function (json) {
 		localStorage["total"] = json;

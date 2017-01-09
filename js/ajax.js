@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Última modificação em: 09/03/2015 18:22
+// Última modificação em: 13/03/2015 16:17
 $(function () {
 var url = null;
 if(_GET("oque") == "notificacoes") {
@@ -24,7 +24,20 @@ if(_GET("oque") == "notificacoes") {
 
 $.ajax(url)
 	.done(function (json) {
-	localStorage[_GET("oque") + "evens"]= json;
+		localStorage[_GET("oque") + "evens"] = json;
+		contructJson(json);
+	})
+	.fail(function () {
+		if(!localStorage[_GET("oque") + "evens"]) {
+			$('body').css('background-image', 'none');
+			$("#eventos").append("<section class=\"margin card\" style=\"width: auto; height: auto; text-align: center;\"><b>Verifique sua conex&atilde;o de internet.</b></section>");
+		} else {
+			$("#eventos").append("<section class=\"margin card\" style=\"width: auto; height: auto; text-align: center;\"><b>Essas informa&ccedil;&otilde;es podem estar desatualizadas, para atualiza-las verifique sua conex&atilde;o de internet.</b></section>");
+			contructJson(localStorage[_GET("oque") + "evens"]);
+		}
+	});
+
+function contructJson(json) {
 	json = JSON.parse(json);
 	
 	var clickable = " clickable";
@@ -47,7 +60,7 @@ for (var i=0; i < json.dados.length; i++) {
   }
 }
      $('body').css('background-image', 'none');
-	});
+}
 
 function configClick(id) {
 	$('#' + id).click(function () {

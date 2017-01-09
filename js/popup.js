@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Última modificação em: 09/03/2015 19:47
+// Última modificação em: 15/03/2015 16:45
 $(function () {
+	$('#logo').click(function () {
+		window.open('http://apps.aloogle.net/web/rebuapp');
+	});
 	$('#sala').click(function () {
 		window.open('paginas/popuppage.html?oque=' + localStorage["sala"] + '&nome=Sala', '_self');
 	});
@@ -34,18 +37,30 @@ $(function () {
 		window.open('paginas/popuppage.html?oque=notificacoes&sala=' + localStorage["sala"] + '&clube=' + localStorage["clube"] + '&eletiva=' + localStorage["eletiva"] + '&nome=Notifica%C3%A7%C3%B5es', '_self');
 	});
 	$('#biblioteca').click(function () {
-		window.open('http://apps.aloogle.net/web/rebuapp/biblioteca.php');
+		if (!localStorage['avisobusca']) {
+			$("#dialog-message").dialog({
+				modal : true,
+				buttons : {
+					Ok : function () {
+						window.open('http://apps.aloogle.net/web/rebuapp/biblioteca.php');
+					}
+				}
+			});
+			localStorage['avisobusca'] = "true";
+		} else {
+			window.open('http://apps.aloogle.net/web/rebuapp/biblioteca.php');
+		}
 	});
 	$('#painel').click(function () {
 		window.open('paginas/popuppage.html?oque=painel' + '&nome=Painel', '_self');
 	});
-	
-	if(localStorage['painel'] == "true") {
+
+	if (localStorage['painel'] == "true") {
 		$('#painel').show();
 	}
-	
+
 	var json = JSON.parse(localStorage["total"]);
-	
+
 	$('#numbersala').html(json.sala);
 	$('#numberclube').html(json.clube);
 	$('#numbereletiva').html(json.eletiva);
