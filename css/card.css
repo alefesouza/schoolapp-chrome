@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Regular.ttf");
+}
+
+body {
+	font-family: "Roboto";
+	background: url('../imagens/loading.gif') #eeeeee no-repeat center;
+	font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #0000ff;
+}
+
+.card {
+  position:relative;
+  z-index:2;
+  padding:1.5rem;
+  box-shadow:0 1px 2px #aaa;
+  background:white;
+  margin:0 1rem 1rem;
+  border-radius:3px;
+  transform-origin:top left;
+}
+
+.clickable:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+
+.clickable:active {
+  background: #dddddd;
+}
+
+.margin {
+    margin-top: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+}
+
+table {
+	border: #000000 solid 1px;
+}
+
+td {
+    border: #000000 solid 1px;
+    text-align: center;
+    padding: 5px;
+}
+
+hr {
+	border: 0px;
+	height: 1px;
+	background: #005000;
+}

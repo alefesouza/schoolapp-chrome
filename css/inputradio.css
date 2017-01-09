@@ -1,0 +1,124 @@
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+/* This file defines styles for form controls. The order of rule blocks is
+ * important as there are some rules with equal specificity that rely on order
+ * as a tiebreaker. These are marked with OVERRIDE. */
+
+/* Default state **************************************************************/
+
+:-webkit-any(
+input[type='checkbox'],
+input[type='radio']) {
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08),
+      inset 0 1px 2px rgba(255, 255, 255, 0.75);
+  color: #444;
+  font: inherit;
+  margin: 0 1px 0 0;
+  text-shadow: 0 1px 0 rgb(240, 240, 240);
+  outline:none;
+}
+
+input[type='checkbox'] {
+  bottom: 2px;
+  height: 13px;
+  position: relative;
+  vertical-align: middle;
+  width: 13px;
+}
+
+input[type='radio'] {
+  /* OVERRIDE */
+  border-radius: 100%;
+  bottom: 3px;
+  height: 15px;
+  position: relative;
+  vertical-align: middle;
+  width: 15px;
+}
+
+/* Checked ********************************************************************/
+
+input[type='checkbox']:checked::before {
+  -webkit-user-select: none;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAcklEQVQY02NgwA/YoJgoEA/Es4DYgJBCJSBeD8SboRinBiYg7kZS2IosyQ/Eakh8LySFq4FYHFlxGRBvBOJYqMRqJMU+yApNkSRAeC0Sux3dfSCTetE0wKyXxOWhMKhTYIr9CAUXyJMzgLgBagBBgDPGAI2LGdNt0T1AAAAAAElFTkSuQmCC');
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+html[dir='rtl'] input[type='checkbox']:checked::before {
+  -webkit-transform: scaleX(-1);
+}
+
+input[type='radio']:checked::before {
+  background-color: #666;
+  border-radius: 100%;
+  bottom: 3px;
+  content: '';
+  display: block;
+  left: 3px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+/* Hover **********************************************************************/
+
+:enabled:hover:-webkit-any(
+    input[type='checkbox'],
+    input[type='radio']) {
+  background-image: -webkit-linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12),
+      inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  color: black;
+}
+
+/* Active *********************************************************************/
+
+:enabled:active:-webkit-any(
+    input[type='checkbox'],
+    input[type='radio']) {
+  background-image: -webkit-linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+/* Disabled *******************************************************************/
+
+input:disabled:-webkit-any([type='checkbox'],
+                           [type='radio']) {
+  opacity: .75;
+}
+
+/* Focus **********************************************************************/
+
+:-webkit-any(.checkbox, .radio) label {
+  /* Don't expand horizontally: <http://crbug.com/112091>. */
+  display: -webkit-inline-box;
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+
+:-webkit-any(.checkbox, .radio) label input ~ span {
+  -webkit-margin-start: 0.6em;
+  /* Make sure long spans wrap at the same horizontal position they start. */
+  display: block;
+}
+
+:-webkit-any(.checkbox, .radio) label:hover {
+  color: black;
+}
+
+label > input:disabled:-webkit-any([type='checkbox'], [type='radio']) ~ span {
+  color: #999;
+}

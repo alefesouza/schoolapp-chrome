@@ -1,0 +1,136 @@
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file.
+ */
+
+/* Codigo copiado da pagina de configuracoes do Google Chrome */
+
+/* Codigo dos botoes da extensao */
+
+button:not(.custom-appearance),input[type='color']:not(.custom-appearance),
+input[type='submit']:not(.custom-appearance) {
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	-webkit-user-select: none;
+	background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+	border: 1px solid #aaa;
+	color: #444;
+	font-size: inherit;
+	margin-bottom: 0;
+	padding: 3px 12px;
+	outline:none;
+}
+
+button:not(.custom-appearance):hover,input[type='color']:not(.custom-appearance):hover,
+input[type='submit']:not(.custom-appearance):hover {
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	background: #ebebeb -webkit-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+	border-color: #999;
+	color: #222;
+}
+
+button:not(.custom-appearance):active,input[type='color']:not(.custom-appearance):active,
+input[type='submit']:not(.custom-appearance):active {
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+	background: #ebebeb -webkit-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+	color: #333;
+}
+
+button[disabled]:not(.custom-appearance),input[type='color'][disabled]:not(.custom-appearance),
+input[type='submit'][disabled]:not(.custom-appearance),button[disabled]:not(.custom-appearance):hover,input[type='color'][disabled]:not(.custom-appearance):hover,
+input[type='submit'][disabled]:not(.custom-appearance):hover {
+	-webkit-box-shadow: none;
+	background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+	border-color: #aaa;
+	color: #888;
+}
+
+button:not(.custom-appearance):focus,input[type='color']:not(.custom-appearance):focus,input[type='color']:not(.custom-appearance):focus {
+	-webkit-box-shadow: inset 0 1px 2px white,
+		0 1px 2px rgba(0, 0, 0, .2),
+		0 0 1px #c0c0c0,
+		0 0 1px #c0c0c0,
+		0 0 1px #c0c0c0;
+	-webkit-transition: border-color 200ms;
+	/* We use border color because it follows the border radius (unlike outline).
+	* This is particularly noticeable on mac. */
+	border-color: #4080fa;
+	outline: none;
+}
+
+/* Botao para os tooltips */
+
+button.toolti {
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	-webkit-user-select: none;
+	background: transparent;
+	border: 1px solid #aaa;
+	color: #444;
+	font-size: inherit;
+	margin-bottom: 0;
+	padding: 3px 12px;
+	outline:none;
+}
+
+button.toolti:hover {
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	background: #ebebeb -webkit-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+	border-color: #999;
+	color: #000;
+}
+
+button.toolti:active {
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+	background: #ebebeb -webkit-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+	color: #333;
+}
+
+button[disabled].toolti,
+button[disabled].toolti:hover {
+	-webkit-box-shadow: none;
+	background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+	border-color: #aaa;
+	color: #888;
+}
+
+button.toolti:focus {
+	-webkit-box-shadow: inset 0 1px 2px white,
+		0 1px 2px rgba(0, 0, 0, .2),
+		0 0 1px #c0c0c0,
+		0 0 1px #c0c0c0,
+		0 0 1px #c0c0c0;
+	-webkit-transition: border-color 200ms;
+	border-color: #4080fa;
+	outline: none;
+}
+
+/* Botao da popup */
+input[type='submit'].azul {
+	border: 1px solid #000000;
+	color: #000000;
+	margin-bottom: 0px;
+	padding: 3px 12px 3px 12px;
+	background-color: #00ffff;
+	outline:none;
+}
+
+input[type='submit'].azul:hover {
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+	background: #ebebeb -webkit-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+	border-color: #0000ff;
+	color: #222;
+	background-color: #ebebeb;
+}
+
+input[type='submit'].azul:active {
+	-webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+	background: #ebebeb -webkit-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+	color: #333;
+}
+
+input[type='submit'][disabled].azul, input[type='submit'][disabled].azul:hover {
+	-webkit-box-shadow: none;
+	background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+	border-color: #aaa; color: #888;
+}
