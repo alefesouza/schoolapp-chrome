@@ -1,18 +1,18 @@
 RebuApp
 =====
 
-Nesse repositÛrio h· o cÛdigo da extens„o de Google Chrome do RebuApp, aplicativo que desenvolvi no terceiro ano do ensino mÈdio, visando ajudar os alunos com hor·rios e agenda de cada sala da escola.
+Nesse reposit√≥rio h√° o c√≥digo da extens√£o de Google Chrome do RebuApp, aplicativo que desenvolvi no terceiro ano do ensino m√©dio, visando ajudar os alunos com hor√°rios e agenda de cada sala da escola.
 
-VocÍ pode baixa-la na [Chrome Web Store](https://chrome.google.com/webstore/detail/rebuapp/gefhfinklkikjpoddkgkmnppbjaikhgd).
+Voc√™ pode baixa-la na [Chrome Web Store](https://chrome.google.com/webstore/detail/rebuapp/gefhfinklkikjpoddkgkmnppbjaikhgd).
 
-Desenvolvi a extens„o por causa do meu conhecimento no desenvolvimento nisso (comecei a programar com extensıes de Google Chrome aos 13 anos e desenvolvi a extens„o com 18 anos), e percebi que poderia ajudar os alunos com notificaÁıes push e a integraÁ„o com a vers„o web do aplicativo.
+Desenvolvi a extens√£o por causa do meu conhecimento no desenvolvimento nisso (comecei a programar com extens√µes de Google Chrome aos 13 anos e desenvolvi a extens√£o com 18 anos), e percebi que poderia ajudar os alunos com notifica√ß√µes push e a integra√ß√£o com a vers√£o web do aplicativo.
 
-A extens„o pode exibir internamente a agenda da sala, um badge no Ìcone da barra de ferramentas com a quantidade de eventos ou notificaÁıes, que ao passar o mouse mostra o tÌtulo do evento mais prÛximo ou notificaÁ„o mais recente, notificaÁıes em tempo real usando a API do Chrome, possui busca de livros e dicion·rio com sugestıes na barra de endereÁos usando o comando "rp" e atalhos para o aplicativo web.
+A extens√£o pode exibir internamente a agenda da sala, um badge no √≠cone da barra de ferramentas com a quantidade de eventos ou notifica√ß√µes, que ao passar o mouse mostra o t√≠tulo do evento mais pr√≥ximo ou notifica√ß√£o mais recente, notifica√ß√µes em tempo real usando a API do Chrome, possui busca de livros e dicion√°rio com sugest√µes na barra de endere√ßos usando o comando "rp" e atalhos para o aplicativo web.
 
-Leve em consideraÁ„o que eu n„o levava muito a sÈrio boas-pr·ticas de JavaScript na Èpica, portando caso vocÍ veja alguns cÛdigos "ruins" n„o significa que eu programe do mesmo jeito atÈ hoje.
+Leve em considera√ß√£o que eu n√£o levava muito a s√©rio boas-pr√°ticas de JavaScript na √©poca, portando caso voc√™ veja alguns c√≥digos "ruins" n√£o significa que eu programe do mesmo jeito at√© hoje.
 
 
-LicenÁa
+Licen√ßa
 -----
 
     Copyright (C) 2015 Alefe Souza <contato@alefesouza.com>
